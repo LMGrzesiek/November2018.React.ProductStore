@@ -7,7 +7,8 @@ class Home extends Component {
         super();
 
         this.state = {
-         viewAsGrid: true
+         viewAsGrid: true,
+         products: []
         }
     }
 
@@ -15,6 +16,15 @@ class Home extends Component {
         console.log(this.state);
         this.setState(state => {return {viewAsGrid: !this.state.viewAsGrid}});
     }
+
+    componentDidMount(){
+        fetch("./products.json").then((response) => {
+            response.json().then((data) =>{
+                this.setState(state => {return {products: data }});
+            })
+        })
+    }
+
 
   render() {
     return (
@@ -33,9 +43,9 @@ class Home extends Component {
                     }
                 </div>
             </div>
-                        <div id="products" className="row view-group">
-            {["Hot Dog", "Ice Cream", "Root Beer", "Cold Beer", "French Fries", "Onion Rings"].map(
-                    e => <Product e={e} addToCart={this.addToCart} key={e} viewAsGrid={this.state.viewAsGrid}></Product>
+                        <div id="products" className="row">
+            {this.state.products.map(
+                    e => <Product e={e} addToCart={this.addToCart} key={e.ID} viewAsGrid={this.state.viewAsGrid}></Product>
             )}
             </div>
         </div>

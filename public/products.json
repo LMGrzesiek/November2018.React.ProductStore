@@ -1,0 +1,5 @@
+[
+    {"ID": 1, "Name": "Hot Dog", "Description": "Our top-selling beef hot dog is a real crowd favorite", "Price": 5.99, "ImageUrl": "/images/hotdog.jpg"}, 
+    {"ID": 2, "Name": "Ice Cream", "Description": "Cool down on a hot day with some refreshing ice cream", "Price": 3.99, "ImageUrl": "/images/icecream.jpg"}, 
+    {"ID": 3, "Name": "Root Beer", "Description": "Our homemade root beer still uses the classic family recipe", "Price": 1.99, "ImageUrl": "/images/rootbeer.jpg"}
+]
