@@ -27,11 +27,11 @@ class Product extends Component {
                         <button className="card-footer btn" onClick={this.addToCartOnClick}>Add to cart</button>
                     </div>
                 </div> : 
-                <div className="col-12 card">
+                <div className="col-12 card p-2 my-1">
                     <div className="row">
                         <div className="col-4">
                             <img
-                            className="img-fluid"
+                            className="img-fluid rounded"
                             src={this.props.e.ImageUrl}
                             alt={this.props.e.Name}
                             />
@@ -39,14 +39,8 @@ class Product extends Component {
                         <div className="col-8">
                             <h2>{this.props.e.Name}</h2>
                             <p>{this.props.e.Description}</p>
-                            <div className="row">
-                            <div className="col-12 col-md-6">
-                                <p>${this.props.e.Price}</p>
-                            </div>
-                            <div className="col-12 col-md-6">
-                                <button className="btn btn-success" onClick={this.addToCartOnClick}>Add to cart</button>
-                            </div>
-                            </div>
+                            <p>${this.props.e.Price}</p>
+                            <button className="btn btn-block" onClick={this.addToCartOnClick}>Add to cart</button>
                         </div>
                     </div>
                 </div>);
