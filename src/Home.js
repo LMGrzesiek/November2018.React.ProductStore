@@ -13,7 +13,6 @@ class Home extends Component {
     }
 
     toggleViewOnClick = () => {
-        console.log(this.state);
         this.setState(state => {return {viewAsGrid: !this.state.viewAsGrid}});
     }
 

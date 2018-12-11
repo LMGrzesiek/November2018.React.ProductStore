@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Product extends Component {
 
     addToCartOnClick = () => {
-        console.log('clicked ' + this.props.e)
+        console.log('clicked ' + this.props.e.Name)
     }
    
     render() {
