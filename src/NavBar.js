@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+
 
 import {NavLink} from 'react-router-dom';
 
@@ -16,7 +18,7 @@ class NavBar extends Component {
               <NavLink className="nav-link" to="/">Home</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/cart"><i className="fas fa-shopping-cart"></i><span className="badge badge-secondary">{this.props.quantity}</span></NavLink>
+              <NavLink className="nav-link" to="/cart"><i className="fas fa-shopping-cart"></i><span className="badge badge-secondary">{this.props.cart.length}</span></NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">About</NavLink>
@@ -27,5 +29,10 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return {
+   cart: state.cartReducer 
+  }
+}
 
+export default connect(mapStateToProps)(NavBar);

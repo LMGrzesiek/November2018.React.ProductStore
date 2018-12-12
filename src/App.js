@@ -16,14 +16,10 @@ class App extends Component {
     }
   }
 
-  addToCart = (product) => {
-    this.setState(state => {return {cart: this.state.cart.concat([product])}});
-  }
-
   render() {
     return (
       <div>
-        <NavBar quantity={this.state.cart.length}></NavBar>
+        <NavBar></NavBar>
         <div className="row">
             <div className="col-12 my-3">
             </div>
