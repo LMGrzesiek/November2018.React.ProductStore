@@ -8,8 +8,13 @@ import {BrowserRouter} from 'react-router-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import store from './store'
+import { authStateChanged } from './actions';
 
 const createdStore = createStore(store);
+
+window.firebase.auth().onAuthStateChanged(function(user){
+    createdStore.dispatch(authStateChanged(user));
+})
 
 ReactDOM.render(<BrowserRouter><Provider store={createdStore}><App /></Provider></BrowserRouter>, document.getElementById('root'));
 

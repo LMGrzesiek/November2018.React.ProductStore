@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-
 import {NavLink} from 'react-router-dom';
 
 class NavBar extends Component {
@@ -23,15 +22,30 @@ class NavBar extends Component {
             <li className="nav-item">
               <NavLink className="nav-link" to="/about">About</NavLink>
             </li>
+            {!this.props.user ? 
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/register">Register</NavLink>
+              </li> : ""}
+            {!this.props.user ? 
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/login">Log In</NavLink>
+              </li>
+              :
+              <li className="nav-item">
+                <button className="nav-link btn btn-link" onClick={() => window.firebase.auth().signOut()}>Log Out</button>
+              </li>
+            }
           </ul>
         </div>
       </nav>);
     }
 }
 
+
 const mapStateToProps = (state) => {
   return {
-   cart: state.cartReducer 
+   cart: state.cartReducer,
+   user: state.userReducer 
   }
 }
 

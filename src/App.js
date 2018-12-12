@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom'
 import Home from './Home';
 import NavBar from './NavBar';
 import Cart from './Cart';
+import Register from './Register';
 
 class App extends Component {
 
@@ -28,6 +29,7 @@ class App extends Component {
           <Switch>
             <Route path="/cart" component={Cart} />
             <Route path="/" exact component={Home} />
+            <Route path="/register" component={Register} />
             <Route path="/about" render={() => (<div className="jumbotron"><h1>About</h1><p>This React Store is developed for the November 2018 DotNet class.</p></div>)} />
           </Switch>
         </div>
@@ -35,5 +37,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;
