@@ -3,7 +3,12 @@ import { connect } from 'react-redux'
 
 import {NavLink} from 'react-router-dom';
 
+import {loadCart} from './actions';
+
 class NavBar extends Component {
+
+  
+
 
     render() {
         return (<nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,5 +53,7 @@ const mapStateToProps = (state) => {
    user: state.userReducer 
   }
 }
+
+
 
 export default connect(mapStateToProps)(NavBar);
